@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".capturevideo"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+
+<View
+    android:layout_width="1200px"
+    android:layout_height="1700px"
+    android:alpha="1"
+    android:background="@color/card"
+    android:layout_marginLeft="-30px"
+    android:layout_marginTop="120px"
+    ></View>
+
+<TextView
+    android:id="@+id/cross2"
+    android:layout_width="100px"
+    android:layout_height="wrap_content"
+    android:text="X"
+    android:textStyle="bold"
+    android:textSize="40px"
+    android:layout_marginLeft="40px"
+    android:layout_marginTop="-1680px"
+    android:textColor="@color/black"
+    />
+
+<TextView
+    android:id="@+id/textView82"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="HDR"
+    android:textColor="@color/black"
+    android:textSize="30px"
+    android:layout_marginTop="-60px"
+    android:layout_marginLeft="470px"
+    android:textStyle="bold"/>
+
+<View
+    android:layout_width="80px"
+    android:layout_height="80px"
+    android:alpha="1"
+    android:background="@mipmap/ic_brightness_round"
+    android:layout_marginLeft="950px"
+    android:layout_marginTop="-53px"
+    ></View>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="200px"
+    android:orientation="horizontal"
+    android:layout_marginTop="1650px">
+
+
+
+    <Button
+        android:id="@+id/textView83"
+        android:layout_width="280px"
+        android:layout_height="160px"
+        android:text="Portrait"
+        android:paddingBottom="60px"
+        android:textColor="@color/black"
+        android:textSize="30px"
+        android:textStyle="bold"
+        android:layout_marginLeft="20px"
+        android:backgroundTint="@color/background"
+        />
+
+    <Button
+        android:id="@+id/textView84"
+        android:layout_width="230px"
+        android:layout_height="150px"
+        android:paddingBottom="60px"
+        android:textAlignment="textStart"
+        android:text="Slo-mo"
+        android:paddingRight="20px"
+        android:textColor="@color/black"
+        android:textSize="30px"
+        android:textStyle="bold"
+        android:layout_marginLeft="-85px"
+        android:backgroundTint="@color/background"/>
+
+    <Button
+        android:id="@+id/textView85"
+        android:layout_width="230px"
+        android:layout_height="100px"
+        android:text="Video"
+        android:gravity="top"
+        android:paddingBottom="0px"
+        android:textColor="@color/special"
+        android:textSize="30px"
+        android:textStyle="bold"
+        android:layout_marginLeft="-30px"
+        android:backgroundTint="@color/circle"/>
+
+    <Button
+        android:id="@+id/campic"
+        android:layout_width="250px"
+        android:layout_height="160px"
+        android:gravity="right"
+        android:text="Photo"
+        android:textColor="@color/black"
+        android:textSize="30px"
+        android:textStyle="bold"
+        android:backgroundTint="@color/background"
+        android:layout_marginLeft="0px" />
+
+    <Button
+        android:id="@+id/textView87"
+        android:layout_width="wrap_content"
+        android:layout_height="160px"
+        android:text="Square"
+        android:textColor="@color/black"
+        android:textSize="30px"
+        android:textStyle="bold"
+        android:layout_marginLeft="-70px"
+        android:backgroundTint="@color/background"/>
+</LinearLayout>
+
+<View
+    android:layout_width="110px"
+    android:layout_height="110px"
+    android:alpha="1"
+    android:background="@drawable/camcircle"
+    android:layout_marginLeft="170px"
+    android:layout_marginTop="-40px"
+    ></View>
+<View
+    android:layout_width="70px"
+    android:layout_height="70px"
+    android:alpha="1"
+    android:background="@mipmap/ic_campic"
+    android:layout_marginLeft="190px"
+    android:layout_marginTop="-90px"
+    ></View>
+<ImageButton
+    android:id="@+id/capturevid"
+    android:layout_width="260px"
+    android:layout_height="260px"
+    android:alpha="1"
+    android:background="@drawable/capture"
+    android:layout_marginLeft="400px"
+    android:layout_marginTop="-145px"
+    ></ImageButton>
+<View
+    android:layout_width="110px"
+    android:layout_height="110px"
+    android:alpha="1"
+    android:background="@drawable/camcircle"
+    android:layout_marginLeft="800px"
+    android:layout_marginTop="-200px"
+    ></View>
+<ImageButton
+    android:id="@+id/picbtn2"
+    android:layout_width="70px"
+    android:layout_height="70px"
+    android:alpha="1"
+    android:background="@mipmap/ic_camcam_round"
+    android:layout_marginLeft="820px"
+    android:layout_marginTop="-90px"
+    ></ImageButton>
+</LinearLayout>

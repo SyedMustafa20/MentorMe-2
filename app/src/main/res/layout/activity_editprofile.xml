@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editprofile"
+    android:orientation="vertical"
+    android:background="@color/background">
+    <View
+        android:layout_width="1140px"
+        android:layout_height="700px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/numpad"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="-100px"
+        android:alpha="1">
+    </View>
+
+    <ImageButton
+        android:id="@+id/back14"
+        android:layout_width="100px"
+        android:layout_height="120px"
+        android:src="@mipmap/ic_backnumpad_round"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="-500px"
+        android:layout_marginLeft="30px"
+        android:backgroundTint="@color/numpad"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/textView74"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="@color/white"
+        android:textSize="60px"
+        android:textStyle="bold"
+        android:layout_marginTop="-110px"
+        android:layout_marginLeft="390px"/>
+
+    <View
+        android:layout_width="450px"
+        android:layout_height="450px"
+        android:background="@drawable/frontpagecircles"
+        android:backgroundTint="@color/black"
+        android:layout_marginLeft="340px"
+        android:layout_marginTop="170px"
+        android:alpha="1">
+    </View>
+    <ImageView
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:background="@mipmap/ic_pause"
+        android:layout_marginLeft="470px"
+        android:layout_marginTop="-320px"
+        android:alpha="1">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textView95"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/special"
+        android:textSize="40px"
+        android:layout_marginLeft="70px"
+        android:textStyle="bold"
+        android:layout_marginTop="150px"/>
+
+    <EditText
+        android:id="@+id/editTextText15"
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ali"
+        android:textColor="#838383"
+        android:background="@drawable/inputbox"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="70px"
+        android:textSize="35px"
+        android:paddingLeft="20px"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/special"
+        android:textSize="40px"
+        android:layout_marginLeft="70px"
+        android:textStyle="bold"
+        android:layout_marginTop="30px"/>
+
+    <EditText
+
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:inputType="text"
+        android:text="ali@gmail.com"
+        android:textColor="#838383"
+        android:background="@drawable/inputbox"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="70px"
+        android:textSize="35px"
+        android:paddingLeft="20px"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Number"
+        android:textColor="@color/special"
+        android:textSize="40px"
+        android:layout_marginLeft="70px"
+        android:textStyle="bold"
+        android:layout_marginTop="30px"/>
+
+    <EditText
+        android:textColor="#838383"
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:inputType="text"
+        android:text="+923305926891"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="70px"
+        android:textSize="35px"
+        android:paddingLeft="20px"
+        android:background="@drawable/inputbox"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:text="Country"
+        android:textColor="@color/special"
+        android:textSize="40px"
+        android:layout_marginLeft="70px"
+        android:textStyle="bold"
+        android:layout_marginTop="30px"/>
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="70px"
+        android:textSize="35px"
+        android:paddingLeft="20px"
+        android:background="@drawable/inputbox"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:text="City"
+        android:textColor="@color/special"
+        android:textSize="40px"
+        android:layout_marginLeft="70px"
+        android:textStyle="bold"
+        android:layout_marginTop="30px"/>
+
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="70px"
+        android:textSize="35px"
+        android:paddingLeft="20px"
+        android:background="@drawable/inputbox"/>
+    <TextView
+        android:id="@+id/update"
+        android:layout_width="800px"
+        android:layout_height="150px"
+        android:background="@drawable/inputbox"
+        android:textAlignment="center"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:paddingTop="30px"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/special"
+        android:text="Update Profile"
+        android:layout_marginTop="120px"
+        android:layout_marginLeft="130px"/>
+</LinearLayout>

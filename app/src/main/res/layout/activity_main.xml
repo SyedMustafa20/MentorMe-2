@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="700px"
+        android:layout_marginLeft="80dp"
+        android:fontFamily="sans-serif"
+        android:text="mentor"
+        android:textColor="#01A589"
+        android:textSize="130px"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="me"
+        android:textColor="#FFC107"
+        android:textSize="130px"
+        android:textStyle="bold"
+        android:layout_marginTop="700px"
+         />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="800px"
+        android:layout_marginLeft="-550px"
+        android:text="connect. ask. learn."
+        android:textColor="#066159"
+        android:textSize="60px" />
+
+    <View
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:alpha="0.4"
+        android:background="@drawable/frontpagecircles"
+        android:layout_marginLeft="-1360px"
+        android:layout_marginTop="-60px"
+        ></View>
+
+    <View
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:background="@drawable/frontpagecircles"
+        android:layout_marginLeft="-350px"
+        android:layout_marginTop="-180px"
+        android:alpha="0.4">
+    </View>
+
+
+</LinearLayout>

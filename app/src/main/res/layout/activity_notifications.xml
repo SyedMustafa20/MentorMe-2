@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".notifications"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <View
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:alpha="0.4"
+        android:background="@drawable/frontpagecircles"
+        android:layout_marginLeft="-290px"
+        android:layout_marginTop="-60px"
+        ></View>
+
+    <View
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:background="@drawable/frontpagecircles"
+        android:layout_marginLeft="-150px"
+        android:layout_marginTop="-600px"
+        android:alpha="0.4">
+    </View>
+
+    <ImageButton
+        android:id="@+id/back16"
+        android:layout_width="100px"
+        android:layout_height="120px"
+        android:src="@mipmap/ic_back_round"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="-150px"
+        android:layout_marginLeft="30px"
+        android:backgroundTint="#8FD8CB"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:layout_marginTop="-110px"
+        android:layout_marginLeft="180px"
+        android:textColor="@color/special"
+        android:textSize="70px"
+        android:textStyle="bold"/>
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:background="@mipmap/ic_notifybell_round"
+        android:layout_marginLeft="600px"
+        android:layout_marginTop="-90px"
+        android:alpha="1">
+    </View>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear All"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="850px"
+        android:textColor="@color/golden"
+        android:textSize="50px"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have added a mentor, Alex. Thankyou!"
+        android:textSize="45px"
+        android:textColor="@color/black"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"/>
+
+    <TextView
+        android:id="@+id/textView101"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textColor="@color/black"
+        android:textSize="40px"
+        android:layout_marginTop="-55px"
+        android:layout_marginLeft="990px"/>
+    <View
+        android:layout_width="1200px"
+        android:layout_height="5px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/circle"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="30px"
+        android:alpha="1">
+    </View>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your favorites list is expanding. Impressive!"
+        android:textSize="45px"
+        android:textColor="@color/black"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textColor="@color/black"
+        android:textSize="40px"
+        android:layout_marginTop="-55px"
+        android:layout_marginLeft="990px"/>
+    <View
+        android:layout_width="1200px"
+        android:layout_height="5px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/circle"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="30px"
+        android:alpha="1">
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have new message in community."
+        android:textSize="45px"
+        android:textColor="@color/black"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textColor="@color/black"
+        android:textSize="40px"
+        android:layout_marginTop="-55px"
+        android:layout_marginLeft="990px"/>
+    <View
+        android:layout_width="1200px"
+        android:layout_height="5px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/circle"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="30px"
+        android:alpha="1">
+    </View>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your favorite mentor is Online. Say Hi to him."
+        android:textSize="45px"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textColor="@color/black"
+        android:textSize="40px"
+        android:layout_marginTop="-55px"
+        android:layout_marginLeft="990px"/>
+    <View
+        android:layout_width="1200px"
+        android:layout_height="5px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/circle"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="30px"
+        android:alpha="1">
+    </View>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thank you for booking a session. Goodluck."
+        android:textSize="45px"
+        android:textColor="@color/black"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="50px"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textColor="@color/black"
+        android:textSize="40px"
+        android:layout_marginTop="-55px"
+        android:layout_marginLeft="990px"/>
+    <View
+        android:layout_width="1200px"
+        android:layout_height="5px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/circle"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="30px"
+        android:alpha="1">
+    </View>
+</LinearLayout>

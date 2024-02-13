@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".forgetpass"
+    android:orientation="vertical"
+    android:background="#D3F4FA">
+    <ImageButton
+        android:id="@+id/back2"
+        android:layout_width="100px"
+        android:layout_height="120px"
+        android:src="@mipmap/ic_back_round"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="30px"
+        android:backgroundTint="@color/background"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="#2D5C54"
+        android:textStyle="bold"
+        android:textSize="70px"
+        android:layout_marginLeft="60px"/>
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="250px"
+        android:textSize="40px"
+        android:textColor="@color/black"
+        android:text="Don't worry! It happens. Please enter the email associated with your account" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:layout_marginTop="130px"
+        android:layout_marginLeft="60px"
+        android:textSize="40px"/>
+
+
+    <EditText
+        android:id="@+id/editTextText9"
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Enter Email"
+        android:textColor="#838383"
+        android:textSize="40px"
+        android:background="@drawable/inputbox"
+        android:layout_marginTop="10px"
+        android:paddingLeft="20px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="150px"/>
+
+    <TextView
+        android:id="@+id/button14"
+        android:layout_width="500px"
+        android:layout_height="120px"
+        android:text="Send"
+        android:textAlignment="center"
+        android:paddingTop="20px"
+        android:textColor="@color/white"
+        android:background="@drawable/inputbox"
+        android:backgroundTint="@color/special"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:layout_marginTop="150px"
+        android:layout_marginRight="280px"
+        android:layout_marginLeft="270px"/>
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remember your Password?"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="230px"
+        android:textSize="40px"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#2D5C54"
+        android:text="Login"
+        android:textSize="40px"
+        android:layout_marginTop="-55px"
+        android:layout_marginLeft="730px"/>
+
+</LinearLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verifyNumber"
+    android:orientation="vertical"
+    android:background="#D3F4FA"
+    >
+    <ImageButton
+        android:id="@+id/back1"
+        android:layout_width="100px"
+        android:layout_height="120px"
+        android:backgroundTint="@color/background"
+        android:src="@mipmap/ic_back_round"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="30px"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify your phone number"
+        android:textColor="#2D5C54"
+        android:textStyle="bold"
+        android:textSize="70px"
+        android:layout_marginLeft="150px"/>
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We have sent a code to"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="190px"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+923305926891"
+        android:textColor="#2D5C54"
+        android:layout_marginTop="-50px"
+        android:layout_marginLeft="590px"
+        />
+
+    <TextView
+        android:id="@+id/editTextText4"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="150px"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:background="@drawable/numcircle"/>
+
+    <TextView
+        android:id="@+id/editTextText6"
+        android:layout_marginTop="-150px"
+        android:layout_marginLeft="300px"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:background="@drawable/numcircle" />
+
+    <TextView
+        android:id="@+id/editTextText7"
+        android:layout_marginTop="-152px"
+        android:layout_marginLeft="450px"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:inputType="number"
+        android:background="@drawable/numcircle"/>
+
+    <TextView
+        android:id="@+id/editTextText8"
+        android:layout_marginTop="-150px"
+        android:layout_marginLeft="600px"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:inputType="number"
+        android:background="@drawable/numcircle"/>
+
+    <TextView
+        android:layout_marginTop="-150px"
+        android:layout_marginLeft="750px"
+        android:textColor="@color/black"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:ems="10"
+        android:inputType="number"
+        android:background="@drawable/numcircle" />
+
+    <TextView
+        android:id="@+id/button3"
+        android:layout_width="500px"
+        android:layout_height="120px"
+        android:text="Verify"
+        android:textAlignment="center"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:paddingTop="20px"
+        android:background="@drawable/inputbox"
+        android:textColor="@color/white"
+        android:backgroundTint="#2D5C54"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="300px"/>
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send code again"
+        android:textColor="@color/black"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="350px"/>
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#2D5C54"
+        android:text="00:20"
+        android:layout_marginTop="-50px"
+        android:layout_marginLeft="640px"
+        android:layout_marginBottom="30px"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#65CFBD"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="1"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="60px"
+        />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="2"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="-220px"
+        android:layout_marginLeft="400px"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="3"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="-220px"
+        android:layout_marginLeft="750px"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="4"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="60px"
+        />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="5"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="-220px"
+        android:layout_marginLeft="400px"/>
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="6"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="-220px"
+        android:layout_marginLeft="750px"/>
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="7"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="60px"/>
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:layout_marginLeft="400px"
+        android:layout_marginTop="-220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="8"
+        android:textColor="@color/white"
+        android:textSize="70px" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="9"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="-220px"
+        android:layout_marginLeft="750px"/>
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="250px"
+        android:layout_height="220px"
+        android:backgroundTint="#B4F2E8"
+        android:text="0"
+        android:textSize="70px"
+        android:textColor="@color/white"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="400px"/>
+
+    <ImageButton
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:src="@mipmap/ic_delete"
+        android:backgroundTint="@color/numpad"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="-200px"
+        android:layout_marginLeft="770px"
+        ></ImageButton>
+</LinearLayout>
+</LinearLayout>

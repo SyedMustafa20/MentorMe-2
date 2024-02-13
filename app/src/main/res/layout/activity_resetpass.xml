@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".resetpass"
+    android:orientation="vertical"
+    android:background="#D3F4FA">
+
+    <ImageButton
+        android:id="@+id/back3"
+        android:layout_width="100px"
+        android:layout_height="120px"
+        android:src="@mipmap/ic_back_round"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="30px"
+        android:backgroundTint="@color/background"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Password?"
+        android:textColor="#2D5C54"
+        android:textStyle="bold"
+        android:textSize="70px"
+        android:layout_marginLeft="60px"/>
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please type a new password and re-enter the password.Type something that you will remember"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="250px"
+        android:textSize="40px"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Password"
+        android:textSize="40px"
+        android:textColor="@color/black"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="60px"/>
+
+
+    <EditText
+        android:id="@+id/editTextText10"
+        android:layout_width="900px"
+        android:layout_height="120px"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Enter New Password"
+        android:textSize="40px"
+        android:textColor="#838383"
+        android:layout_marginTop="10px"
+        android:background="@drawable/inputbox"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="100px"
+        android:paddingLeft="20px"/>
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm Password"
+        android:textColor="@color/black"
+        android:textSize="40px"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="60px"/>
+    <EditText
+        android:layout_width="900px"
+        android:layout_height="120px"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Re-enter Password"
+        android:textSize="40px"
+        android:textColor="#838383"
+        android:layout_marginTop="10px"
+        android:background="@drawable/inputbox"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="100px"
+        android:paddingLeft="20px"/>
+
+    <TextView
+        android:id="@+id/button15"
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:text="Reset Password"
+        android:textColor="@color/white"
+        android:backgroundTint="#2D5C54"
+        android:layout_marginTop="200px"
+        android:textSize="50px"
+        android:paddingTop="20px"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginRight="270px"
+        android:layout_marginLeft="280px"
+        android:background="@drawable/inputbox"
+        />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't want to reset Password?"
+        android:textSize="40px"
+        android:textColor="@color/black"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="250px"/>
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#2D5C54"
+        android:textSize="40px"
+        android:layout_marginTop="-57px"
+        android:layout_marginLeft="800px"/>
+
+</LinearLayout>

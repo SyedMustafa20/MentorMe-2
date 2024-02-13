@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newmentor"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <View
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:alpha="0.4"
+        android:background="@drawable/frontpagecircles"
+        android:layout_marginLeft="-290px"
+        android:layout_marginTop="-60px"
+        ></View>
+
+    <View
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:background="@drawable/frontpagecircles"
+        android:layout_marginLeft="-150px"
+        android:layout_marginTop="-600px"
+        android:alpha="0.4">
+    </View>
+
+    <ImageButton
+        android:id="@+id/back8"
+        android:layout_width="100px"
+        android:layout_height="120px"
+        android:src="@mipmap/ic_backcircle_round"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="-300px"
+        android:layout_marginLeft="30px"
+        android:backgroundTint="#8FD8CB"
+        ></ImageButton>
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add a New Mentor"
+        android:layout_marginTop="0px"
+        android:layout_marginLeft="100px"
+        android:textColor="@color/special"
+        android:textSize="80px"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help us Expand!"
+        android:textColor="@color/special"
+        android:layout_marginLeft="400px"
+        android:layout_marginTop="10px"
+        android:textSize="50px"/>
+
+    <View
+        android:layout_width="1140px"
+        android:layout_height="2000px"
+        android:background="@drawable/logindatabox"
+        android:backgroundTint="@color/numpad"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="100px"
+        android:alpha="1">
+    </View>
+
+    <TextView
+        android:id="@+id/textView67"
+        android:layout_width="400px"
+        android:layout_height="200px"
+        android:layout_marginTop="-1800px"
+        android:layout_marginLeft="100px"
+        android:textColor="@color/special"
+        android:textAlignment="center"
+        android:paddingTop="110px"
+        android:background="@drawable/dashed"
+        android:text="Upload Video" />
+
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:background="@mipmap/ic_video"
+        android:layout_marginLeft="250px"
+        android:layout_marginTop="-180px"
+        android:alpha="1">
+    </View>
+
+    <TextView
+        android:id="@+id/textView69"
+        android:layout_width="400px"
+        android:layout_height="200px"
+        android:layout_marginTop="-120px"
+        android:layout_marginLeft="600px"
+        android:textColor="@color/special"
+        android:textAlignment="center"
+        android:paddingTop="110px"
+        android:background="@drawable/dashed"
+        android:text="Upload Photo" />
+
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:background="@mipmap/ic_camera"
+        android:layout_marginLeft="760px"
+        android:layout_marginTop="-180px"
+        android:alpha="1">
+    </View>
+    <TextView
+        android:id="@+id/textView68"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="190px"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="40px"
+        android:layout_marginLeft="100px"
+        />
+
+    <EditText
+        android:id="@+id/editTextText14"
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:layout_marginLeft="100px"
+        android:paddingLeft="40px"
+        android:layout_marginTop="-40px"
+        android:inputType="text"
+        android:textSize="40px"
+        android:text="Enter Name"
+        android:textColor="#838383"
+        android:background="@drawable/inputbox"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="30px"
+        android:text="Descirption"
+        android:textColor="@color/white"
+        android:textSize="40px"
+        android:layout_marginLeft="100px"
+        />
+
+    <EditText
+        android:layout_width="900px"
+        android:layout_height="100px"
+        android:ems="10"
+        android:layout_marginLeft="100px"
+        android:paddingLeft="40px"
+        android:textSize="40px"
+        android:layout_marginTop="-40px"
+        android:inputType="text"
+        android:text="Enter Description"
+        android:textColor="#838383"
+        android:background="@drawable/inputbox"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="30px"
+        android:text="Status"
+        android:textColor="@color/white"
+        android:textSize="40px"
+        android:layout_marginLeft="100px"
+        />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="900px"
+        android:textColor="#838383"
+        android:layout_height="100px"
+        android:background="@drawable/inputbox"
+        android:layout_marginLeft="100px"
+        android:paddingLeft="40px"
+        android:layout_marginTop="-40px"
+        android:inputType="text"
+        android:text="Available"
+        ></Spinner>
+
+    <TextView
+        android:id="@+id/upload"
+        android:layout_width="800px"
+        android:layout_height="150px"
+        android:textAlignment="center"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:paddingTop="30px"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/special"
+        android:text="Upload"
+        android:background="@drawable/inputbox"
+
+        android:layout_marginTop="180px"
+        android:layout_marginLeft="150px"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400px"
+        android:layout_marginTop="150px"
+        android:layout_marginBottom="-300px"
+        android:background="@color/numpad"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:background="@drawable/addnew"
+            android:layout_marginLeft="440px"
+            android:layout_marginTop="-30px"
+            android:alpha="1">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350px"
+            android:layout_marginTop="-100px"
+            android:layout_marginBottom="-300px"
+            android:background="@color/special"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/home4"
+                android:layout_width="180px"
+                android:layout_height="130px"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="0px"
+                android:backgroundTint="@color/special"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_home2_round"></ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/background"
+                android:layout_marginTop="100px"
+                android:layout_marginLeft="-140px"
+                />
+            <ImageButton
+                android:id="@+id/searchbtn4"
+                android:layout_width="180px"
+                android:layout_height="130px"
+                android:layout_marginLeft="60px"
+                android:layout_marginTop="10px"
+                android:backgroundTint="@color/special"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_search"></ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textColor="@color/background"
+                android:layout_marginTop="100px"
+                android:layout_marginLeft="-140px"
+                />
+
+
+
+            <ImageButton
+                android:id="@+id/chat4"
+                android:layout_width="180px"
+                android:layout_height="130px"
+                android:layout_marginLeft="300px"
+                android:layout_marginTop="10px"
+                android:backgroundTint="@color/special"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_msg"></ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textColor="@color/background"
+                android:layout_marginTop="100px"
+                android:layout_marginLeft="-140px"
+                />
+            <ImageButton
+                android:id="@+id/profile4"
+                android:layout_width="180px"
+                android:layout_height="130px"
+                android:layout_marginLeft="80px"
+                android:layout_marginTop="10px"
+                android:backgroundTint="@color/special"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_person"></ImageButton>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="@color/background"
+                android:layout_marginTop="100px"
+                android:layout_marginLeft="-140px"
+                />
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/addnew4"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_marginLeft="500px"
+            android:layout_marginTop="-90px"
+            android:background="@drawable/addnew"
+            android:backgroundTint="@color/special"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_circleadd_round"></ImageButton>
+    </LinearLayout>
+</LinearLayout>
