@@ -1,17 +1,41 @@
 package com.ahmadMustafa.i210886
 
+import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.filters.LargeTest
 import org.junit.Test
-import java.util.regex.Pattern.matches
+import org.junit.runner.RunWith
 
-//class NavigationTest {
-  //  // expresso test to navigate from MainActivity to myprofile
-    //@Test
-    //fun testNavigationToMyProfile() {
-      //  onView(withId(R.id.profile1)).perform(click())
-    //onView(withId(R.id.profile1)).check(matches(isDisplayed()))
-    //}
-//}
+@RunWith(AndroidJUnit4::class)
+@LargeTest
+class NavigationTest {
+
+    @Test
+    fun testLoginToHomeActivity() {
+        // Launch the MainActivity
+        ActivityScenario.launch(loginPage::class.java)
+
+        // Perform a click on the button
+        onView(withId(R.id.loginbutton)).perform(click())
+
+        // Check if SecondActivity is displayed
+        onView(withId(R.id.bellicon)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun testLoginToForgetPassword() {
+        // Launch the MainActivity
+        ActivityScenario.launch(loginPage::class.java)
+
+        // Perform a click on the button
+        onView(withId(R.id.textView8)).perform(click())
+
+        // Check if SecondActivity is displayed
+        onView(withId(R.id.textView31)).check(matches(isDisplayed()))
+    }
+}
