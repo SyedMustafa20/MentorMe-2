@@ -134,30 +134,23 @@
         android:layout_marginLeft="920px"
         android:background="@color/special"
         ></ImageButton>
-    <View
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pfp2"
         android:layout_width="350px"
         android:layout_height="270px"
         android:background="@drawable/capture"
-        android:backgroundTint="@color/black"
         android:layout_marginLeft="0px"
         android:layout_marginTop="-150px"
         android:alpha="1">
-    </View>
-    <View
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:background="@mipmap/ic_emily_foreground"
-        android:layout_marginLeft="130px"
-        android:layout_marginTop="-180px"
-        android:alpha="1">
-    </View>
+    </com.google.android.material.imageview.ShapeableImageView>
+
     <View
         android:layout_width="150px"
         android:layout_height="150px"
         android:alpha="1"
         android:background="@drawable/camcircle"
         android:layout_marginLeft="170px"
-        android:layout_marginTop="-70px"
+        android:layout_marginTop="-170px"
         ></View>
     <ImageButton
         android:id="@+id/editpf2"
@@ -190,6 +183,7 @@
         android:layout_marginTop="-20px"
         ></View>
     <TextView
+        android:id="@+id/city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Islamabad"

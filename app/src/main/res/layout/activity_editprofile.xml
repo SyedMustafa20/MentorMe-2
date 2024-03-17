@@ -39,23 +39,16 @@
         android:layout_marginTop="-110px"
         android:layout_marginLeft="390px"/>
 
-    <View
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pfp"
         android:layout_width="450px"
         android:layout_height="450px"
-        android:background="@drawable/frontpagecircles"
-        android:backgroundTint="@color/black"
         android:layout_marginLeft="340px"
         android:layout_marginTop="170px"
-        android:alpha="1">
-    </View>
-    <ImageView
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_pause"
-        android:layout_marginLeft="470px"
-        android:layout_marginTop="-320px"
-        android:alpha="1">
-    </ImageView>
+        android:alpha="1"
+        android:background="@drawable/frontpagecircles"></com.google.android.material.imageview.ShapeableImageView>
+
+
 
     <TextView
         android:id="@+id/textView95"
@@ -94,7 +87,7 @@
         android:layout_marginTop="30px"/>
 
     <EditText
-
+        android:id="@+id/newemail"
         android:layout_width="900px"
         android:layout_height="100px"
         android:ems="10"
@@ -117,6 +110,7 @@
         android:layout_marginTop="30px"/>
 
     <EditText
+        android:id="@+id/newcontact"
         android:textColor="#838383"
         android:layout_width="900px"
         android:layout_height="100px"
