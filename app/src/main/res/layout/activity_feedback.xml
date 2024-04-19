@@ -38,7 +38,7 @@
         android:layout_marginTop="50px"
         android:layout_marginLeft="30px"/>
     <TextView
-
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="John Cooper"
@@ -55,14 +55,15 @@
         android:layout_marginLeft="650px"
         android:layout_marginTop="-330px"
         ></View>
-    <View
-        android:layout_width="250px"
-        android:layout_height="250px"
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="350px"
+        android:layout_height="350px"
         android:alpha="1"
         android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginLeft="730px"
-        android:layout_marginTop="-320px"
-        ></View>
+        android:layout_marginLeft="680px"
+        android:layout_marginTop="-370px"
+        ></ImageView>
 
     <View
         android:layout_width="1200px"
@@ -100,7 +101,7 @@
         android:layout_height="460px"
         android:ems="10"
         android:inputType="text"
-        android:text="Type your experience..."
+        android:hint="Type your experience..."
         android:textColor="#838383"
         android:background="@drawable/specialbox"
         android:layout_marginTop="250px"
@@ -109,46 +110,21 @@
         android:layout_marginLeft="80px"
         android:layout_marginRight="80px"/>
 
-    <View
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:background="@mipmap/ic_ratings"
-        android:layout_marginLeft="230px"
-        android:layout_marginTop="90px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:background="@mipmap/ic_ratings"
-        android:layout_marginLeft="350px"
-        android:layout_marginTop="-100px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:background="@mipmap/ic_ratings"
-        android:layout_marginLeft="470px"
-        android:layout_marginTop="-100px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:background="@mipmap/ic_ratings"
-        android:layout_marginLeft="590px"
-        android:layout_marginTop="-100px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:background="@mipmap/ic_ratings"
-        android:layout_marginLeft="700px"
-        android:layout_marginTop="-100px"
-        android:alpha="1">
-    </View>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/ratingBar"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="65dp"
+        android:rating="0"
+        android:numStars="5"
+        android:stepSize="1"
+        android:isIndicator="false"
+        android:progressTint="@color/golden"
+        android:backgroundTint="@color/white"
+        android:progressBackgroundTint="@color/special"
+        android:layout_marginRight="30px"/>
+
     <TextView
         android:id="@+id/submitfeedback"
         android:layout_width="800px"

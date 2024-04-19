@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 
 class letsfind : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_letsfind)
@@ -50,5 +53,18 @@ class letsfind : AppCompatActivity() {
             startActivity(intent1)
         }
 
+        val searchButton = findViewById<ImageView>(R.id.searched)
+        val searchEditText = findViewById<EditText>(R.id.editText12)
+
+        searchButton.setOnClickListener {
+            val mentorName = searchEditText.text.toString().trim()
+            if (mentorName.isNotEmpty()) {
+                val intent = Intent(this, Results::class.java)
+                intent.putExtra("mentorName", mentorName)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Please enter a mentor name", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

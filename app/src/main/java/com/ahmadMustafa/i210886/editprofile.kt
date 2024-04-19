@@ -14,6 +14,10 @@ import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.util.UUID
+import android.widget.*
+import com.bumptech.glide.Glide
+import com.google.firebase.database.*
+import java.util.*
 
 class editprofile : AppCompatActivity() {
 
@@ -31,7 +35,7 @@ class editprofile : AppCompatActivity() {
         setContentView(R.layout.activity_editprofile)
 
         auth = FirebaseAuth.getInstance()
-        databaseRef = FirebaseDatabase.getInstance().reference.child("Users").child(auth.currentUser!!.uid)
+        databaseRef = FirebaseDatabase.getInstance().reference.child("users").child(auth.currentUser!!.uid)
         storageRef = FirebaseStorage.getInstance().reference
 
         val country = arrayOf("Pakistan", "India", "China")
@@ -56,9 +60,9 @@ class editprofile : AppCompatActivity() {
 
         val updateButton = findViewById<TextView>(R.id.update)
         updateButton.setOnClickListener {
-            val inputName = findViewById<TextView>(R.id.editTextText15).text.toString()
-            val inputEmail = findViewById<TextView>(R.id.newemail).text.toString()
-            val inputContactNumber = findViewById<TextView>(R.id.newcontact).text.toString()
+            val inputName = findViewById<EditText>(R.id.editname).text.toString()
+            val inputEmail = findViewById<EditText>(R.id.newemail).text.toString()
+            val inputContactNumber = findViewById<EditText>(R.id.newcontact).text.toString()
             val inputCountry = countrySpinner.selectedItem.toString()
             val inputCity = citySpinner.selectedItem.toString()
 
@@ -82,8 +86,17 @@ class editprofile : AppCompatActivity() {
                     val contactNumber = snapshot.child("contactNumber").getValue(String::class.java)
                     val country = snapshot.child("country").getValue(String::class.java)
                     val city = snapshot.child("city").getValue(String::class.java)
+                    val profilePictureUrl = snapshot.child("profilePictureUrl").getValue(String::class.java)
 
                     populateFields(name, email, contactNumber, country, city)
+
+                    // Load profile picture using Glide
+                    profilePictureUrl?.let { url ->
+                        val profileImageView = findViewById<ShapeableImageView>(R.id.pfp)
+                        Glide.with(this@editprofile)
+                            .load(url)
+                            .into(profileImageView)
+                    }
                 }
             }
 
@@ -94,9 +107,9 @@ class editprofile : AppCompatActivity() {
     }
 
     private fun populateFields(name: String?, email: String?, contactNumber: String?, country: String?, city: String?) {
-        findViewById<TextView>(R.id.editTextText15).text = name
-        findViewById<TextView>(R.id.newemail).text = email
-        findViewById<TextView>(R.id.newcontact).text = contactNumber
+        findViewById<EditText>(R.id.editname).setText(name)
+        findViewById<EditText>(R.id.newemail).setText(email)
+        findViewById<EditText>(R.id.newcontact).setText(contactNumber)
 
         val countryIndex = (countrySpinner.adapter as ArrayAdapter<String>).getPosition(country)
         val cityIndex = (citySpinner.adapter as ArrayAdapter<String>).getPosition(city)
@@ -106,7 +119,13 @@ class editprofile : AppCompatActivity() {
     }
 
     private fun updateUserData(name: String, email: String, contactNumber: String, country: String, city: String) {
-        databaseRef.apply {
+        val userUid = auth.currentUser!!.uid // Get the current user's UID
+
+        // Reference the "user" node with the current user's UID
+        val userRef = FirebaseDatabase.getInstance().reference.child("users").child(userUid)
+
+        // Update the user data
+        userRef.apply {
             child("name").setValue(name)
             child("email").setValue(email)
             child("contactNumber").setValue(contactNumber)
@@ -115,13 +134,14 @@ class editprofile : AppCompatActivity() {
         }
 
         if (imageUri != null) {
-            val fileReference = storageRef.child("profile_pictures").child("${auth.currentUser!!.uid}.jpg")
+            // Upload the image to Firebase Storage
+            val fileReference = storageRef.child("profile_pictures").child("$userUid.jpg")
             fileReference.putFile(imageUri!!)
                 .addOnSuccessListener { taskSnapshot ->
                     // Get the download URL from the task snapshot
                     fileReference.downloadUrl.addOnSuccessListener { uri ->
                         // Store the download URL in the database
-                        databaseRef.child("profilePicture").setValue(uri.toString())
+                        userRef.child("profilePicture").setValue(uri.toString())
                             .addOnSuccessListener {
                                 Toast.makeText(this@editprofile, "Profile picture uploaded", Toast.LENGTH_SHORT).show()
                             }
@@ -131,13 +151,14 @@ class editprofile : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this@editprofile, "Failed to upload profile picture", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@editprofile, "not enter Failed to upload profile picture", Toast.LENGTH_SHORT).show()
                 }
         }
 
         // Redirect to the profile activity
         startActivity(Intent(this@editprofile, myprofile::class.java))
     }
+
 
     private fun openFileChooser() {
         val intent = Intent()
@@ -149,40 +170,38 @@ class editprofile : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.data != null) {
-            // Check if the request code is the same as the PICK_IMAGE_REQUEST
-            if (requestCode == PICK_IMAGE_REQUEST) {
-                // Get the URI of the selected image
-                imageUri = data?.data
+            // Get the URI of the selected image
+            imageUri = data?.data
 
-                // Set the image view to the selected image and make it round
-                val imageView = findViewById<ShapeableImageView>(R.id.pfp)
-                val radius = resources.getDimension(R.dimen.corner)
-                imageView.shapeAppearanceModel = imageView.shapeAppearanceModel
-                    .toBuilder()
-                    .setAllCorners(CornerFamily.ROUNDED, radius)
-                    .build()
+            // Set the image view to the selected image and make it round
+            val imageView = findViewById<ShapeableImageView>(R.id.pfp)
+            val radius = resources.getDimension(R.dimen.corner)
+            imageView.shapeAppearanceModel = imageView.shapeAppearanceModel
+                .toBuilder()
+                .setAllCorners(CornerFamily.ROUNDED, radius)
+                .build()
 
-                imageView.setImageURI(imageUri)
+            imageView.setImageURI(imageUri)
 
-                // Upload the image to Firebase Storage
-                val ref = storageRef.child("images/${UUID.randomUUID()}")
-                val uploadTask = ref.putFile(imageUri!!)
-                uploadTask.addOnSuccessListener {
-                    // Get the download URL
-                    ref.downloadUrl.addOnSuccessListener { uri ->
-                        // Save the download URL to the Firebase Database
-                        val user = FirebaseAuth.getInstance().currentUser
-                        val userRef = databaseRef.child(user!!.uid).child("UserInfo")
-                        userRef.child("profilePicture").setValue(uri.toString())
+            // Upload the image to Firebase Storage
+            val ref = storageRef.child("images/${UUID.randomUUID()}")
+            val uploadTask = ref.putFile(imageUri!!)
+            uploadTask.addOnSuccessListener { taskSnapshot ->
+                // Get the download URL
+                ref.downloadUrl.addOnSuccessListener { uri ->
+                    // Save the download URL to the Firebase Database
+                    val user = FirebaseAuth.getInstance().currentUser
+                    val userRef = databaseRef.child(user!!.uid).child("users")
+                    userRef.child("profilePicture").setValue(uri.toString())
 
-                        // Update the shared preferences with the new image URL
-                        val sharedPreferences: SharedPreferences = getSharedPreferences("ProfilePicture", MODE_PRIVATE)
-                        val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                        editor.putString("profilePictureUri", uri.toString())
-                        editor.apply()
-                    }
+                    // Update the shared preferences with the new image URL
+                    val sharedPreferences: SharedPreferences = getSharedPreferences("ProfilePicture", MODE_PRIVATE)
+                    val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                    editor.putString("profilePictureUri", uri.toString())
+                    editor.apply()
                 }
             }
         }
     }
+
 }

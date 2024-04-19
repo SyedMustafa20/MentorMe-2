@@ -39,7 +39,7 @@
         android:layout_marginTop="50px"
         android:layout_marginLeft="30px"/>
     <TextView
-
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="John Cooper"
@@ -48,22 +48,24 @@
         android:textStyle="bold"
         android:layout_marginLeft="30px"/>
 
-    <View
+    <ImageView
+
         android:layout_width="400px"
         android:layout_height="400px"
         android:alpha="0.4"
         android:background="@drawable/forpic"
         android:layout_marginLeft="650px"
         android:layout_marginTop="-330px"
-        ></View>
-    <View
-        android:layout_width="250px"
-        android:layout_height="250px"
+        ></ImageView>
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="350px"
+        android:layout_height="350px"
         android:alpha="1"
-        android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginLeft="730px"
-        android:layout_marginTop="-320px"
-        ></View>
+        android:background="@drawable/forpic"
+        android:layout_marginLeft="680px"
+        android:layout_marginTop="-380px"
+        ></ImageView>
 
     <View
         android:layout_width="1200px"
@@ -89,7 +91,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Google"
+        android:text=""
         android:textSize="60px"
         android:textColor="@color/white"
         android:layout_marginLeft="30px"

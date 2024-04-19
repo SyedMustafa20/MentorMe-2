@@ -136,11 +136,11 @@
         ></ImageButton>
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/pfp2"
-        android:layout_width="350px"
-        android:layout_height="270px"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:background="@drawable/capture"
         android:layout_marginLeft="0px"
-        android:layout_marginTop="-150px"
+        android:layout_marginTop="-160px"
         android:alpha="1">
     </com.google.android.material.imageview.ShapeableImageView>
 

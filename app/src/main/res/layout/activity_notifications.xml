@@ -47,14 +47,14 @@
         android:textColor="@color/special"
         android:textSize="70px"
         android:textStyle="bold"/>
-    <View
+    <ImageView
         android:layout_width="100px"
         android:layout_height="100px"
         android:background="@mipmap/ic_notifybell_round"
         android:layout_marginLeft="600px"
         android:layout_marginTop="-90px"
         android:alpha="1">
-    </View>
+    </ImageView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,138 +65,13 @@
         android:textSize="50px"
         android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/textView100"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="You have added a mentor, Alex. Thankyou!"
-        android:textSize="45px"
-        android:textColor="@color/black"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="50px"/>
-
-    <TextView
-        android:id="@+id/textView101"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:textColor="@color/black"
-        android:textSize="40px"
-        android:layout_marginTop="-55px"
-        android:layout_marginLeft="990px"/>
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="@color/circle"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="30px"
-        android:alpha="1">
-    </View>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your favorites list is expanding. Impressive!"
-        android:textSize="45px"
-        android:textColor="@color/black"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="50px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:textColor="@color/black"
-        android:textSize="40px"
-        android:layout_marginTop="-55px"
-        android:layout_marginLeft="990px"/>
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="@color/circle"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="30px"
-        android:alpha="1">
-    </View>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="You have new message in community."
-        android:textSize="45px"
-        android:textColor="@color/black"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="50px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:textColor="@color/black"
-        android:textSize="40px"
-        android:layout_marginTop="-55px"
-        android:layout_marginLeft="990px"/>
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="@color/circle"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="30px"
-        android:alpha="1">
-    </View>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your favorite mentor is Online. Say Hi to him."
-        android:textSize="45px"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="50px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:textColor="@color/black"
-        android:textSize="40px"
-        android:layout_marginTop="-55px"
-        android:layout_marginLeft="990px"/>
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="@color/circle"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="30px"
-        android:alpha="1">
-    </View>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Thank you for booking a session. Goodluck."
-        android:textSize="45px"
-        android:textColor="@color/black"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="50px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="X"
-        android:textColor="@color/black"
-        android:textSize="40px"
-        android:layout_marginTop="-55px"
-        android:layout_marginLeft="990px"/>
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="@color/circle"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="30px"
-        android:alpha="1">
-    </View>
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toTopOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp"
+        app:stackFromEnd="true"
+        tools:ignore="MissingConstraints" />
 </LinearLayout>

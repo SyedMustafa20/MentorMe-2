@@ -26,8 +26,20 @@ class UserData(
     var country: String,
     var city: String,
     var password: String,
-    val pfp: String? = ""
-)
+    val profilePicture: String? = ""
+
+){
+
+    constructor() : this(
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    )
+}
 
 class registerpage : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")

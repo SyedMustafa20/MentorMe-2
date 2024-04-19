@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/background"
     tools:context=".bookedsessions"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:orientation="vertical">
+
+
     <View
         android:layout_width="500px"
         android:layout_height="500px"
@@ -26,16 +29,15 @@
     </View>
 
     <ImageButton
-        android:id="@+id/back15"
-        android:layout_width="100px"
-        android:layout_height="120px"
-        android:src="@mipmap/ic_backnumpad_round"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="-150px"
-        android:layout_marginLeft="30px"
-        android:backgroundTint="#8FD8CB"
-        ></ImageButton>
-
+    android:id="@+id/back15"
+    android:layout_width="100px"
+    android:layout_height="120px"
+    android:src="@mipmap/ic_backnumpad_round"
+    android:scaleType="centerCrop"
+    android:layout_marginTop="-150px"
+    android:layout_marginLeft="30px"
+    android:backgroundTint="#8FD8CB"
+    ></ImageButton>
     <TextView
         android:id="@+id/textView47"
         android:layout_width="match_parent"
@@ -47,131 +49,15 @@
         android:textSize="70px"
         android:textStyle="bold"/>
 
-    <View
-        android:layout_width="350px"
-        android:layout_height="350px"
-        android:background="@drawable/card"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="100px"
-        android:alpha="0.4">
-    </View>
-    <View
-        android:layout_width="500px"
-        android:layout_height="500px"
-        android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginLeft="-20px"
-        android:layout_marginTop="-420px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="550px"
-        android:layout_height="180px"
-        android:background="@drawable/inputbox"
-        android:layout_marginLeft="475px"
-        android:layout_marginTop="-300px"
-        android:alpha="1">
-    </View>
-
-    <TextView
-        android:id="@+id/textView96"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookedSessionRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="John Cooper"
-        android:textColor="@color/special"
-        android:textStyle="bold"
-        android:textSize="40px"
-        android:layout_marginLeft="500px"
-        android:layout_marginTop="-160px"/>
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <TextView
-        android:id="@+id/textView97"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="24th Dec 2023"
-        android:textSize="30px"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-45px"
-        android:layout_marginLeft="780px"/>
 
-    <TextView
-        android:id="@+id/textView98"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="UX Designer @ Google"
-        android:layout_marginLeft="500px"
-        android:textSize="25px"
-        android:layout_marginTop="20px"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/textView99"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1:00 pm"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-40px"
-        android:layout_marginLeft="870px"
-        android:textSize="25px"/>
-
-    <View
-        android:layout_width="350px"
-        android:layout_height="350px"
-        android:background="@drawable/card"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="200px"
-        android:alpha="0.4">
-    </View>
-    <View
-        android:layout_width="500px"
-        android:layout_height="500px"
-        android:background="@mipmap/ic_emily_foreground"
-        android:layout_marginLeft="-20px"
-        android:layout_marginTop="-420px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="550px"
-        android:layout_height="180px"
-        android:background="@drawable/inputbox"
-        android:layout_marginLeft="475px"
-        android:layout_marginTop="-300px"
-        android:alpha="1">
-    </View>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Emma Phillips"
-        android:textColor="@color/special"
-        android:textStyle="bold"
-        android:textSize="40px"
-        android:layout_marginLeft="500px"
-        android:layout_marginTop="-160px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1st Jan 2023"
-        android:textSize="30px"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-45px"
-        android:layout_marginLeft="780px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Android Developer"
-        android:layout_marginLeft="500px"
-        android:textSize="25px"
-        android:layout_marginTop="20px"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="09:00 pm"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-40px"
-        android:layout_marginLeft="870px"
-        android:textSize="25px"/>
 </LinearLayout>

@@ -4,335 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/background"
     tools:context=".chats"
-    android:orientation="vertical"
-    android:background="@color/background">
-    <ImageButton
-        android:id="@+id/back10"
-        android:layout_width="100px"
-        android:layout_height="120px"
-        android:src="@mipmap/ic_back_round"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="50px"
-        android:layout_marginLeft="30px"
-        android:backgroundTint="@color/background"
-        ></ImageButton>
-
-    <TextView
-        android:id="@+id/textView74"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Chats"
-        android:textColor="@color/special"
-        android:textSize="80px"
-        android:textStyle="bold"
-        android:layout_marginTop="-110px"
-        android:layout_marginLeft="150px"/>
+        android:layout_height="970px"
+        android:background="@color/background"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView75"
+        <ImageButton
+            android:id="@+id/back10"
+            android:clickable="true"
+            android:layout_marginTop="100px"
+            android:layout_width="130px"
+            android:layout_marginLeft="20px"
+            android:background="@color/background"
+            android:layout_height="80px"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_backcircle_round"
+            android:backgroundTint="@color/background"
+
+            ></ImageButton>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"
+            android:textColor="@color/special"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginTop="-95px"
+            android:layout_marginLeft="140px"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Community"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="65px"
+            android:layout_marginLeft="60px"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220px"
+            android:layout_marginTop="30px"
+            android:background="@color/background"
+
+
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="200px"
+                android:layout_height="200px"
+                android:background="@drawable/chatactivity"
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="30px"></ImageButton>
+
+
+            <ImageButton
+                android:layout_width="200px"
+                android:layout_height="200px"
+                android:background="@drawable/chatactivity"
+
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="10px"></ImageButton>
+
+
+            <ImageButton
+                android:layout_width="200px"
+                android:layout_height="200px"
+                android:background="@drawable/chatactivity"
+
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="10px"></ImageButton>
+
+
+            <ImageButton
+                android:layout_width="200px"
+                android:layout_height="200px"
+                android:background="@drawable/chatactivity"
+
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="10px"></ImageButton>
+
+
+            <ImageButton
+                android:layout_width="200px"
+                android:layout_height="200px"
+                android:background="@drawable/chatactivity"
+
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="10px"></ImageButton>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Messages"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="60px"
+            android:layout_marginTop="60px"></TextView>
+
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userRecyclerView"
+        android:layout_marginTop="-100dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My community"
-        android:layout_marginTop="20px"
-        android:layout_marginLeft="50px"
-        android:textColor="@color/black"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="0px"
-        android:layout_marginTop="50px"
-        ></View>
-
-    <View
-        android:id="@+id/imageView2"
-        android:layout_width="200px"
-        android:layout_height="200px"
-        tools:srcCompat="@tools:sample/avatars"
-        android:layout_marginLeft="-200px"
-        android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginTop="53px"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="."
-        android:textSize="260px"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-160px"
-        android:layout_marginLeft="-80px"
-        />
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="30px"
-        android:layout_marginTop="50px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-       android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginLeft="-200px"
-        android:layout_marginTop="53px"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="."
-        android:textSize="260px"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-160px"
-        android:layout_marginLeft="-80px"
-        />
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="50px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginLeft="-200px"
-        android:layout_marginTop="53px"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="."
-        android:textSize="260px"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-160px"
-        android:layout_marginLeft="-80px"
-        />
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="50px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_watson_foreground"
-        android:layout_marginLeft="-200px"
-        android:layout_marginTop="53px"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="."
-        android:textSize="260px"
-        android:textColor="#838383"
-        android:layout_marginTop="-160px"
-        android:layout_marginLeft="-80px"
-        />
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="50px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_emily_foreground"
-        android:layout_marginLeft="-200px"
-        android:layout_marginTop="53px"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="."
-        android:textSize="260px"
-        android:textColor="@color/golden"
-        android:layout_marginTop="-160px"
-        android:layout_marginLeft="-80px"
-        />
-
-</LinearLayout>
-
-    <TextView
-        android:id="@+id/textView76"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="All Messages"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="50px"
-        android:textColor="@color/black"/>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="50px"
-        android:backgroundTint="@color/background"
-        android:layout_marginTop="50px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_cooper1_foreground"
-        android:layout_marginLeft="60px"
-        android:layout_marginTop="-90px"/>
-
-    <TextView
-        android:id="@+id/textView77"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="John Cooper"
-        android:textColor="@color/special"
-        android:textSize="40px"
-        android:textStyle="bold"
-        android:layout_marginTop="-140px"
-        android:layout_marginLeft="250px"
-        />
-
-    <TextView
-        android:id="@+id/textView78"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1 New Message"
-        android:textColor="#FF0202"
-        android:layout_marginLeft="250px"
-        android:textSize="25px"/>
-
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="#A6F0E3"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="70px"
-        android:alpha="1">
-    </View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="50px"
-        android:backgroundTint="@color/background"
-        android:layout_marginTop="-100px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_watson_foreground"
-        android:layout_marginLeft="60px"
-        android:layout_marginTop="-90px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jack Watson"
-        android:textColor="@color/special"
-        android:textSize="40px"
-        android:textStyle="bold"
-        android:layout_marginTop="-140px"
-        android:layout_marginLeft="250px"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No New Messages"
-        android:textColor="#838383"
-        android:layout_marginLeft="250px"
-        android:textSize="25px"/>
-
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="#A6F0E3"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="70px"
-        android:alpha="1">
-    </View>
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:alpha="0.4"
-        android:background="@drawable/chatactivity"
-        android:layout_marginLeft="50px"
-        android:backgroundTint="@color/background"
-        android:layout_marginTop="-100px"
-        ></View>
-
-    <View
-        android:layout_width="200px"
-        android:layout_height="200px"
-        android:background="@mipmap/ic_emily_foreground"
-        android:layout_marginLeft="60px"
-        android:layout_marginTop="-90px"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Emma Phillips"
-        android:textColor="@color/special"
-        android:textSize="40px"
-        android:textStyle="bold"
-        android:layout_marginTop="-140px"
-        android:layout_marginLeft="250px"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No New Messages"
-        android:textColor="#838383"
-        android:layout_marginLeft="250px"
-        android:textSize="25px"/>
-
-    <View
-        android:layout_width="1200px"
-        android:layout_height="5px"
-        android:background="@drawable/logindatabox"
-        android:backgroundTint="#A6F0E3"
-        android:layout_marginLeft="-30px"
-        android:layout_marginTop="70px"
-        android:alpha="1">
-    </View>
-
+        android:layout_height="match_parent"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="8dp"
+         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="400px"
-        android:layout_marginTop="550px"
+        android:layout_marginTop="-250px"
         android:layout_marginBottom="-300px"
         android:background="@color/background"
         android:orientation="vertical">
@@ -355,14 +148,14 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/home5"
+                android:id="@+id/home1"
                 android:layout_width="180px"
                 android:layout_height="130px"
                 android:layout_marginLeft="20px"
                 android:layout_marginTop="0px"
                 android:backgroundTint="@color/special"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_home2_round"></ImageButton>
+                android:src="@mipmap/ic_home"></ImageButton>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -372,7 +165,7 @@
                 android:layout_marginLeft="-140px"
                 />
             <ImageButton
-                android:id="@+id/searchbtn5"
+                android:id="@+id/searchbtn"
                 android:layout_width="180px"
                 android:layout_height="130px"
                 android:layout_marginLeft="60px"
@@ -392,14 +185,14 @@
 
 
             <ImageButton
-                android:id="@+id/chat5"
+                android:id="@+id/chat1"
                 android:layout_width="180px"
                 android:layout_height="130px"
                 android:layout_marginLeft="300px"
                 android:layout_marginTop="10px"
                 android:backgroundTint="@color/special"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_msg2_round"></ImageButton>
+                android:src="@mipmap/ic_msg"></ImageButton>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -409,7 +202,7 @@
                 android:layout_marginLeft="-140px"
                 />
             <ImageButton
-                android:id="@+id/profile5"
+                android:id="@+id/profile1"
                 android:layout_width="180px"
                 android:layout_height="130px"
                 android:layout_marginLeft="80px"
@@ -427,7 +220,7 @@
                 />
         </LinearLayout>
         <ImageButton
-            android:id="@+id/addnew5"
+            android:id="@+id/addnew"
             android:layout_width="80px"
             android:layout_height="80px"
             android:layout_marginLeft="500px"

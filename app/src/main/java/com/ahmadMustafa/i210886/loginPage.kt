@@ -34,6 +34,7 @@ class loginPage : AppCompatActivity() {
         }
         auth = FirebaseAuth.getInstance()
 
+
         val emailEditText = findViewById<EditText>(R.id.email)
         emailEditText.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {

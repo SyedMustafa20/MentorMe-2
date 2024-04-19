@@ -57,7 +57,7 @@
         android:alpha="1">
     </View>
 
-    <View
+    <ImageView
         android:id="@+id/searched"
         android:layout_width="100px"
         android:layout_height="100px"
@@ -65,14 +65,14 @@
         android:layout_marginLeft="30px"
         android:layout_marginTop="-95px"
         android:alpha="1">
-    </View>
+    </ImageView>
     <EditText
-        android:id="@+id/editTextText12"
+        android:id="@+id/editText12"
         android:layout_width="780px"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Search"
+        android:hint="Search"
         android:layout_marginLeft="110px"
         android:layout_marginTop="-86px"
         android:backgroundTint="@color/white"

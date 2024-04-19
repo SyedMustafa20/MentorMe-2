@@ -101,14 +101,15 @@
         android:background="@drawable/dashed"
         android:text="Upload Photo" />
 
-    <View
+    <ImageView
+        android:id="@+id/cam"
         android:layout_width="100px"
         android:layout_height="100px"
         android:background="@mipmap/ic_camera"
         android:layout_marginLeft="760px"
         android:layout_marginTop="-180px"
         android:alpha="1">
-    </View>
+    </ImageView>
     <TextView
         android:id="@+id/textView68"
         android:layout_width="match_parent"
@@ -121,7 +122,7 @@
         />
 
     <EditText
-        android:id="@+id/editTextText14"
+        android:id="@+id/editname"
         android:layout_width="900px"
         android:layout_height="100px"
         android:ems="10"
@@ -145,6 +146,7 @@
         />
 
     <EditText
+        android:id="@+id/description"
         android:layout_width="900px"
         android:layout_height="100px"
         android:ems="10"

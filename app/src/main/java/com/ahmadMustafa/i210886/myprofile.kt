@@ -2,39 +2,51 @@ package com.ahmadMustafa.i210886
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.imageview.ShapeableImageView
-import com.google.android.material.shape.CornerFamily
+import com.bumptech.glide.Glide
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.google.firebase.database.*
-import java.util.UUID
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.storage
+
 
 class myprofile : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var databaseRef: DatabaseReference
-    private lateinit var userNameTextView: TextView
-    private lateinit var cityTextView: TextView
-    private lateinit var profileImageView: ImageView
-    private val PICK_IMAGE_REQUEST = 1
-    private var imageUri: Uri? = null
-    @SuppressLint("MissingInflatedId")
+    private lateinit var database: FirebaseDatabase
+    private lateinit var storage: FirebaseStorage
+    private lateinit var usernameTextView: TextView
+    private lateinit var locationTextView: TextView
+
+    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        uri?.let { selectedImage ->
+            uploadImageToFirebaseStorage(selectedImage)
+        }
+    }
+
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_myprofile)
 
-        auth = FirebaseAuth.getInstance()
-        databaseRef = FirebaseDatabase.getInstance().reference.child("Users").child(auth.currentUser!!.uid)
+        auth = Firebase.auth
+        database = FirebaseDatabase.getInstance()
+        storage = Firebase.storage
 
-        userNameTextView = findViewById(R.id.textView91)
-        cityTextView = findViewById(R.id.city)
-        profileImageView = findViewById(R.id.pfp2)
+        usernameTextView = findViewById(R.id.textView91)
+        locationTextView = findViewById(R.id.city)
+
+        val buttonEditProfile = findViewById<ImageButton>(R.id.editpf2)
+        buttonEditProfile.setOnClickListener {
+            openGalleryForImage()
+        }
 
         val logoutButton = findViewById<TextView>(R.id.textView90)
         logoutButton.setOnClickListener {
@@ -45,107 +57,96 @@ class myprofile : AppCompatActivity() {
             finish()
         }
 
-        val backButton = findViewById<ImageButton>(R.id.back13)
-        backButton.setOnClickListener {
+        val button5 = findViewById<ImageButton>(R.id.editpf1)
+        button5.setOnClickListener {
+            val intent5 = Intent(this, editprofile::class.java)
+            startActivity(intent5)
+        }
+
+        val button4 = findViewById<ImageButton>(R.id.back13)
+        button4.setOnClickListener {
             onBackPressed()
         }
 
-        val editProfileButton = findViewById<ImageButton>(R.id.editpf1)
-        editProfileButton.setOnClickListener {
-            val intent = Intent(this, editprofile::class.java)
-            startActivity(intent)
+        // Add button listeners for other buttons
+        val buttonHome = findViewById<ImageButton>(R.id.home8)
+        buttonHome.setOnClickListener {
+            val intent11 = Intent(this, startinterface::class.java)
+            startActivity(intent11)
         }
 
-        val checkBookedButton = findViewById<Button>(R.id.checkbooked)
-        checkBookedButton.setOnClickListener {
-            val intent = Intent(this, bookedsessions::class.java)
-            startActivity(intent)
+        val bookedSession = findViewById<TextView>(R.id.checkbooked)
+        bookedSession.setOnClickListener {
+            val intent11 = Intent(this, bookedsessions::class.java)
+            startActivity(intent11)
         }
 
-        val portfolioButton = findViewById<TextView>(R.id.john)
-        portfolioButton.setOnClickListener {
-            val intent = Intent(this, portfolio::class.java)
-            startActivity(intent)
+        val buttonSearch = findViewById<ImageButton>(R.id.searchbtn8)
+        buttonSearch.setOnClickListener {
+            val intent1 = Intent(this, letsfind::class.java)
+            startActivity(intent1)
         }
 
-        val homeButton = findViewById<ImageButton>(R.id.home8)
-        homeButton.setOnClickListener {
-            val intent = Intent(this, startinterface::class.java)
-            startActivity(intent)
+        val buttonChat = findViewById<ImageButton>(R.id.chat8)
+        buttonChat.setOnClickListener {
+            val intent6 = Intent(this, chats::class.java)
+            startActivity(intent6)
         }
 
-        val searchButton = findViewById<ImageButton>(R.id.searchbtn8)
-        searchButton.setOnClickListener {
-            val intent = Intent(this, letsfind::class.java)
-            startActivity(intent)
+        val buttonMyProfile = findViewById<ImageButton>(R.id.profile8)
+        buttonMyProfile.setOnClickListener {
+            val intent4 = Intent(this, myprofile::class.java)
+            startActivity(intent4)
         }
 
-        val chatButton = findViewById<ImageButton>(R.id.chat8)
-        chatButton.setOnClickListener {
-            val intent = Intent(this, chats::class.java)
-            startActivity(intent)
+        val buttonAdd = findViewById<ImageButton>(R.id.addnew8)
+        buttonAdd.setOnClickListener {
+            val intent3 = Intent(this, newmentor::class.java)
+            startActivity(intent3)
         }
 
-        val myProfileButton = findViewById<ImageButton>(R.id.profile8)
-        myProfileButton.setOnClickListener {
-            val intent = Intent(this, myprofile::class.java)
-            startActivity(intent)
-        }
-
-        val addNewButton = findViewById<ImageButton>(R.id.addnew8)
-        addNewButton.setOnClickListener {
-            val intent = Intent(this, newmentor::class.java)
-            startActivity(intent)
-        }
-
-        // Load user data from Firebase
-        loadUserData()
+        // Fetch and display user profile information
+        displayUserProfile()
     }
 
-    private fun loadUserData() {
-        databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    val userName = dataSnapshot.child("name").getValue(String::class.java)
-                    val city = dataSnapshot.child("city").getValue(String::class.java)
-                    val profilePictureUrl =
-                        dataSnapshot.child("profilePicture").getValue(String::class.java)
-
-                    userNameTextView.text = userName
-                    cityTextView.text = city
-
-                }
-
-            }
-
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+    private fun openGalleryForImage() {
+        getContent.launch("image/*")
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.data != null) {
-            // Check if the request code is the same as the PICK_IMAGE_REQUEST
-            if (requestCode == PICK_IMAGE_REQUEST) {
-                // Get the URI of the selected image
-                imageUri = data?.data
 
-                // Set the image view to the selected image and make it round
-                val imageView = findViewById<ShapeableImageView>(R.id.pfp)
-                val radius = resources.getDimension(R.dimen.corner)
-                imageView.shapeAppearanceModel = imageView.shapeAppearanceModel
-                    .toBuilder()
-                    .setAllCorners(CornerFamily.ROUNDED, radius)
-                    .build()
+    @SuppressLint("SuspiciousIndentation")
+    private fun uploadImageToFirebaseStorage(imageUri: Uri) {
+        // Upload image to Firebase Storage
+    }
 
-                imageView.setImageURI(imageUri)
+    private fun displayUserProfile() {
+        Log.d("myprofile", "displayUserProfile() called")
+        val userId = auth.currentUser?.uid
+        userId?.let { uid ->
+            val userRef = database.reference.child("users").child(uid)
+            userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    Log.d("myprofile", "onDataChange()")
+                    val username = snapshot.child("name").getValue(String::class.java)
+                    val location = snapshot.child("city").getValue(String::class.java)
+                    val imageUrl = snapshot.child("profilePicture").getValue(String::class.java)
+                    Log.d("myprofile", "Username: $username, Location: $location, Image URL: $imageUrl")
 
-                // Upload the image to Firebase Storage
+                    // Set fetched username and location to TextViews
+                    username?.let { usernameTextView.text = it }
+                    location?.let { locationTextView.text = it }
 
-
-                    }
+                    // Load user image if available
+                    imageUrl?.let { url -> Glide.with(this@myprofile)
+                            .load(url)
+                            .circleCrop() // Apply circular transformation
+                            .into(findViewById(R.id.pfp2)) // Assuming the ImageView's ID is profileImageView
+                        }
                 }
-            }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e("FirebaseDatabase", "Error fetching user profile: ${error.message}")
+                }
+            })
         }
+    }
+}

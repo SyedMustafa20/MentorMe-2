@@ -1,55 +1,109 @@
 package com.ahmadMustafa.i210886
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
 import android.widget.ImageButton
-import android.widget.TextView
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.DatabaseError
 class chats : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+    private lateinit var userAdapter: userAdapter
+    private val userList: ArrayList<UserData> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            window.attributes.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+        }
         setContentView(R.layout.activity_chats)
 
-        val button1 = findViewById<ImageButton>(R.id.back10)
-        button1.setOnClickListener {
+        // for immersive mode
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowInsetsControllerCompat(window, findViewById(android.R.id.content)).let { controller ->
+            controller.hide(WindowInsetsCompat.Type.statusBars() or WindowInsetsCompat.Type.navigationBars())
+            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        }
+
+        // Set up click listeners for navigation buttons
+        findViewById<ImageButton>(R.id.back10).setOnClickListener {
             onBackPressed()
         }
 
-
-        var button2=findViewById<ImageButton>(R.id.home5)
-        button2.setOnClickListener {
-            val intent1 = Intent(this, startinterface::class.java)
-            startActivity(intent1)
+        findViewById<ImageButton>(R.id.home1).setOnClickListener {
+            // Handle click to go to home activity
+            val intent = Intent(this, startinterface::class.java)
+            startActivity(intent)
         }
 
-        var button3=findViewById<ImageButton>(R.id.searchbtn5)
-        button3.setOnClickListener {
-            val intent1 = Intent(this, letsfind::class.java)
-            startActivity(intent1)
-        }
-        var button4=findViewById<ImageButton>(R.id.chat5)
-        button4.setOnClickListener {
-            val intent1 = Intent(this, chats::class.java)
-            startActivity(intent1)
-        }
-        var button5=findViewById<ImageButton>(R.id.profile5)
-        button5.setOnClickListener {
-            val intent1 = Intent(this, myprofile::class.java)
-            startActivity(intent1)
-        }
-        var button6=findViewById<ImageButton>(R.id.addnew5)
-        button6.setOnClickListener {
-            val intent1 = Intent(this, newmentor::class.java)
-            startActivity(intent1)
+        findViewById<ImageButton>(R.id.searchbtn).setOnClickListener {
+            // Handle click to go to search activity
+            val intent = Intent(this, letsfind::class.java)
+            startActivity(intent)
         }
 
-        var button7=findViewById<TextView>(R.id.textView77)
-        button7.setOnClickListener {
-            val intent1 = Intent(this, chatbox::class.java)
-            startActivity(intent1)
+        findViewById<ImageButton>(R.id.addnew).setOnClickListener {
+            // Handle click to go to add activity
+            val intent = Intent(this, newmentor::class.java)
+            startActivity(intent)
         }
+
+        // Set up RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.userRecyclerView)
+        userAdapter = userAdapter(this, userList)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = userAdapter
+
+        // Populate userList with sample data (replace with your data fetching logic)
+        populateUserListFromDatabase()
     }
+
+
+    private fun populateUserListFromDatabase() {
+        val auth = FirebaseAuth.getInstance()
+        val currentUserUid = auth.currentUser?.uid
+
+        // Assuming you have a reference to your Firebase Database
+        val databaseReference = FirebaseDatabase.getInstance().getReference("users")
+
+        // Add a listener to fetch user data from the database
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                // Clear the existing user list
+                userList.clear()
+
+                // Iterate through the database snapshot to fetch user data
+                for (dataSnapshot in snapshot.children) {
+                    // Parse user data and add it to the userList
+                    val user = dataSnapshot.getValue(UserData::class.java)
+                    user?.let {
+                        // Check if the userId is not null and not equal to the current user's UID
+                        if (dataSnapshot.key != currentUserUid) {
+                            userList.add(it)
+                        }
+                    }
+                }
+
+                // Notify the adapter of the data change
+                userAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle database error
+            }
+        })
+    }
+
 }
