@@ -5,10 +5,16 @@
       <entry key="NavigationTest">
         <State />
       </entry>
+      <entry key="TestCase2">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
       <entry key="editprofile">
+        <State />
+      </entry>
+      <entry key="myProfileNameTest()">
         <State />
       </entry>
     </value>
